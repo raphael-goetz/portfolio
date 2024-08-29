@@ -7,34 +7,37 @@
 </head>
 <style>
     body {
-        background-image: radial-gradient(darkgray 1px, transparent 0);
-        background-size: 30px 30px;
+        background-image: radial-gradient(darkgray 0.5px, transparent 0);
+        background-size: 20px 20px;
     }
 </style>
 <body>
-<section class="mt-12 max-w-2xl mx-auto">
-    <h1 class="text-center space-y-64 font-black text-6xl ">
-        I'm Raphael
-    </h1>
-    <section class="h-4"></section>
-    <div class="flex justify-center items-center">
-        <img class="rounded-full w-1/12 sm:object-scale-down" src="picture/profile.png" alt="Me"/>
-        <a class="px-3" href=".">
-            <h1 class="underline hover:cursor-pointer ">Contact</h1>
-        </a>
-        <a class="px-3" href="https://github.com/raphael-goetz">
-            <h1 class="underline hover:cursor-pointer ">GitHub</h1>
-        </a>
-        <a class="px-3" href=".">
-            <h1 class="underline hover:cursor-pointer ">Legal</h1>
-        </a>
+<section class="mt-12 max-w-2xl mx-auto space-y-4">
+    <div id="hero" class="space-y-4">
+        <h1 class="text-center space-y-64 font-black text-6xl ">
+            I'm Raphael
+        </h1>
+        <div class="flex justify-center items-center">
+            <img class="rounded-full w-1/12 sm:object-scale-down" src="picture/profile.png" alt="Me"/>
+            <a class="px-3" href=".">
+                <h1 class="underline hover:cursor-pointer ">Contact</h1>
+            </a>
+            <a class="px-3" href="https://github.com/raphael-goetz">
+                <h1 class="underline hover:cursor-pointer ">GitHub</h1>
+            </a>
+            <a class="px-3" href=".">
+                <h1 class="underline hover:cursor-pointer ">Legal</h1>
+            </a>
+        </div>
+        <p class="text-justify text-gray-800"> I'm a backend engineer, thinker and optimist. Currently, I'm a <a
+                class="underline"
+                href="https://abc">dual
+            student</a> in computer science at the <a class="underline" href="https://www.ba-sachsen.de/en/">BA
+            Sachsen</a>
+            and working as a software developer. My main focus is the backend & software
+            development. But frontend development isn't unknown territory for me. </p>
     </div>
-    <section class="h-4"></section>
-    <p> I'm an backend engineer, thinker and optimist. Currently, I'm a <a class="underline" href="https://abc">dual
-        student</a> at the <a class="underline" href="">BA Sachsen</a> and working as a software developer. My main focus is the backend & software
-        development. But frontend development isn't unknown territory for me. </p>
-    <section class="h-4"></section>
-    <div id="projects">
+    <div id="projects" class="">
         <h1 class="font-black text-3xl">My work</h1>
         <section class="h-4"></section>
         <div class="bg-black rounded">
@@ -42,7 +45,7 @@
                 <div class="border border-black rounded text-left hover:-translate-x-2 hover:-translate-y-2 bg-white duration-200">
                     <section class="h-4"></section>
                     <div class="px-4">
-                        <h1 class="font-black text-1xl">
+                        <h1 class="font-semibold text-1xl">
                             Code0 - No Code backend solution
                         </h1>
                         <p>Rust, TypeScript, React, gRPC & Company Management</p>
@@ -57,7 +60,7 @@
                 <div class="border border-black rounded text-left hover:-translate-x-2 hover:-translate-y-2 bg-white duration-200">
                     <section class="h-4"></section>
                     <div class="px-4">
-                        <h1 class="font-black text-1xl">
+                        <h1 class="font-semibold text-1xl">
                             Uroria - Digital Event Hoster & Entertainment Studio
                         </h1>
                         <p>Java, Kotlin (Ktor), HTMX, SQL & Team Management</p>
@@ -68,11 +71,11 @@
         </div>
         <section class="h-4"></section>
         <div class="bg-black rounded">
-            <a href="https://calla.so">
+            <a href="https://github.com/marraph">
                 <div class="border border-black rounded text-left hover:-translate-x-2 hover:-translate-y-2 bg-white duration-200">
                     <section class="h-4"></section>
                     <div class="px-4">
-                        <h1 class="font-black text-1xl">
+                        <h1 class="font-semibold text-1xl">
                             Calla - Project & Time Management Software
                         </h1>
                         <p>TypeScript, React, NextJS, Drizzle, PostgreSQL</p>
@@ -82,28 +85,57 @@
             </a>
         </div>
         <section class="h-4"></section>
-        <p>My main goal while developing the named project was not only to learn new programming languages and frameworks but also learn as a person. Managing a whole project and the underlying team taught me many lessons about social and engineering part of a management.</p>
+        <p class="text-justify">My main goal while developing the named project was not only to learn new programming
+            languages and frameworks but also learn as a person. Managing a whole project and the underlying team taught
+            me many lessons about the social and engineering part of a leading position.</p>
     </div>
-    <section class="h-4"></section>
-
-    <section class="h-4"></section>
-    <div class=" flex columns-3 ml-32 mr-32">
-        <a class="flex flex-col items-center justify-end h-full">
-            <section class="h-20"></section>
-            <h1>🥈 Kotlin</h1>
-            <img class="w-3/4" src="picture/pillar_med.png" alt="pillar"/>
-        </a>
-        <a class="flex flex-col items-center justify-end h-full">
-            <section class="h-2"></section>
-            <h1>🥇 Rust</h1>
-            <img class="w-3/4" src="picture/pillar_big.png" alt="pillar"/>
-        </a>
-        <a class="flex flex-col items-center justify-end h-full">
-            <section class="h-32"></section>
-            <h1>🥉 Golang</h1>
-            <img class="w-3/4" src="picture/pillar_small.png" alt="pillar"/>
-        </a>
+    <div id="bento">
+        <div class="border border-black bg-white rounded px-4 py-4 flex space-x-2 items-center">
+            <img class="w-12 h-12" src="picture/twitter-svgrepo-com.svg" alt="twitter">
+            <div>
+                <h1 class="text-2xl font-semibold">X / Twitter</h1>
+                <p>@raphael_goetz</p>
+            </div>
+        </div>
+        <section class="h-4"></section>
+        <div class="grid grid-cols-2 space-x-4 h-full">
+            <div class="border border-black bg-white rounded overflow-hidden h-full flex">
+                <img class="w-full h-full object-cover" src="picture/img.png" alt="Leipzig Street View">
+            </div>
+            <div>
+                <div class="border border-black bg-white rounded px-4 py-4">
+                    <div class="flex items-center space-x-2">
+                        <img class="object-scale-down h-6 w-6" src="picture/github-svgrepo-com.svg">
+                        <div>
+                            <h1 class="text-2xl font-semibold">This Website</h1>
+                        </div>
+                    </div>
+                </div>
+                <section class="h-4"></section>
+                <div class="border border-black bg-white rounded px-4">
+                    <section class="h-8"></section>
+                    <div class=" flex columns-3">
+                        <a class="flex flex-col items-center justify-end h-full">
+                            <section class="h-16"></section>
+                            <h1>🥈 Kotlin</h1>
+                            <img class="w-3/4" src="picture/pillar_med.png" alt="pillar"/>
+                        </a>
+                        <a class="flex flex-col items-center justify-end h-full">
+                            <section class="h-3"></section>
+                            <h1>🥇 Rust</h1>
+                            <img class="w-3/4" src="picture/pillar_big.png" alt="pillar"/>
+                        </a>
+                        <a class="flex flex-col items-center justify-end h-full">
+                            <section class="h-24"></section>
+                            <h1>🥉 Golang</h1>
+                            <img class="w-3/4" src="picture/pillar_small.png" alt="pillar"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+<section class="h-16"></section>
 </body>
 </html>
