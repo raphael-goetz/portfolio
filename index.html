@@ -1,316 +1,318 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Raphael Götz </title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<link rel="stylesheet" href="index.css" type="text/css" media="screen"/>
-<style>
-    #map {
-        width: 100%;
-    }
-</style>
-<body class="bg-teal-50">
-<script>
-    window.onload = function () {
-        const map = L.map("map").setView([51.3397, 12.3731], 5);
-
-        L.tileLayer(
-            "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-            {
-                attribution:
-                    "<span class='inter tracking-tight'>&copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors &copy; <a href='https://carto.com/'>CARTO</a></span>",
-                subdomains: "abcd",
-                maxZoom: 20,
-            }
-        ).addTo(map);
-
-        L.marker([51.3397, 12.3731])
-            .addTo(map)
-            .bindPopup("<span class='inter tracking-tight'><b>Leipzig, Germany</b><br>Based here.</span>")
-            .openPopup();
-    };
-</script>
-
-<section class="mt-12 mb-4 max-w-2xl mx-auto space-y-1">
-    <div id="hero" class="flex gap-8 items-center justify-center pt-12 pb-10">
-        <img
-                class="rounded-lg w-52 sm:object-scale-down mt-6"
-                src="public/profile.png"
-                alt="Me"
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Raphael Götz</title>
+        <meta
+            name="description"
+            content="Portfolio of Raphael Götz, a software engineer focused on backend, services, and product-minded engineering."
         />
-        <div class="space-y-4">
-            <div>
-                <h1
-                        class="text-teal-950 mr-6 text-left space-y-64 font-black text-3xl md:text-4xl neuton-bold font-bold tracking-tighter"
-                >
-                    Raphael Arun Götz
-                </h1>
-                <p
-                        class="inter text-justify text-teal-950 text-base md:text-lg leading-relaxed tracking-tight"
-                >
-                    I'm a
-                    <a class="underline" href="https://www.arbeitsagentur.de/bildung/studium/duales-studium"> <b> dual
-                        student</b></a>
-                    in computer science at the
-                    <a class="underline" href="https://www.dhsn.de/">DHSN</a> and
-                    <b> working </b> as a <b> software engineer</b>. My main focus is
-                    backend and service engineering. But frontend development isn't unknown territory for me.
-                </p>
-            </div>
-            <div class="flex justify-start items-center gap-2">
-                <div class="bg-teal-500 rounded-lg text-white">
-                    <a href="">
-                        <div
-                                class="flex items-center text-white bg-teal-950 justify-center gap-1.5 px-2 py-1 border border-teal-950 rounded-lg text-left hover:-translate-x-0.5 hover:-translate-y-0.5  duration-200"
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet/dist/leaflet.css"
+        />
+        <link
+            rel="stylesheet"
+            href="index.css"
+            type="text/css"
+            media="screen"
+        />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
+        <script defer>
+            window.addEventListener("DOMContentLoaded", function () {
+                const mapElement = document.getElementById("map");
+
+                if (window.L && mapElement) {
+                    const map = L.map("map", {
+                        scrollWheelZoom: false,
+                        zoomControl: false,
+                    }).setView([51.3397, 12.3731], 5);
+
+                    L.tileLayer(
+                        "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                        {
+                            attribution:
+                                "&copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors &copy; <a href='https://carto.com/'>CARTO</a>",
+                            subdomains: "abcd",
+                            maxZoom: 20,
+                        },
+                    ).addTo(map);
+
+                    L.marker([51.3397, 12.3731])
+                        .addTo(map)
+                        .bindPopup("<b>Leipzig, Germany</b><br>Based here.");
+                }
+
+                const prefetched = new Set();
+                document
+                    .querySelectorAll("[data-prefetch]")
+                    .forEach(function (link) {
+                        link.addEventListener(
+                            "pointerenter",
+                            function () {
+                                const href = link.getAttribute("href");
+
+                                if (!href || prefetched.has(href)) {
+                                    return;
+                                }
+
+                                const prefetch = document.createElement("link");
+                                prefetch.rel = "prefetch";
+                                prefetch.as = "document";
+                                prefetch.href = href;
+                                document.head.appendChild(prefetch);
+                                prefetched.add(href);
+                            },
+                            { once: true },
+                        );
+                    });
+            });
+        </script>
+    </head>
+    <body>
+        <main class="site-shell">
+            <header class="hero">
+                <img
+                    class="hero__image"
+                    src="public/profile.png"
+                    alt="Portrait of Raphael Götz"
+                />
+                <div class="hero__content">
+                    <h1>Raphael Arun Götz</h1>
+                    <p class="lede">
+                        Dual computer science student at DHSN and software
+                        engineer focused on backend systems, services, and
+                        practical software development.
+                    </p>
+                    <nav class="action-row" aria-label="Primary links">
+                        <a
+                            class="button button--primary"
+                            href="public/cv-raphael-goetz.pdf"
+                            download
+                            aria-label="Download CV"
                         >
-                            <!-- @license lucide-static v0.548.0 - ISC -->
                             <svg
-                                    class="w-4 lucide lucide-download"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="#fff"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                aria-hidden="true"
+                                class="icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
                             >
-                                <path d="M12 15V3"/>
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <path d="m7 10 5 5 5-5"/>
+                                <path d="M12 15V3" />
+                                <path
+                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                                />
+                                <path d="m7 10 5 5 5-5" />
                             </svg>
-
-                            <span class="inter text-md font-semibold text-white tracking-tight mb-0.5"
-                            >Download CV</span
-                            >
-                        </div>
-                    </a>
-                </div>
-                <div class="bg-teal-950 rounded-lg">
-                    <a href="mailto:contact@raphael-goetz.de">
-                        <div
-                                class="flex items-center justify-center gap-1.5 px-2 py-1 border border-teal-950 rounded-lg text-left hover:-translate-x-0.5 hover:-translate-y-0.5 bg-teal-100 duration-200"
+                            Download CV
+                        </a>
+                        <a
+                            class="button"
+                            href="mailto:contact@raphael-goetz.de"
+                            aria-label="Send email"
                         >
-                            <!-- @license lucide-static v0.548.0 - ISC -->
                             <svg
-                                    class="lucide lucide-mail w-4"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                aria-hidden="true"
+                                class="icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
                             >
-                                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/>
-                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path
+                                    d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                                />
+                                <rect
+                                    x="2"
+                                    y="4"
+                                    width="20"
+                                    height="16"
+                                    rx="2"
+                                />
                             </svg>
-
-                            <span class="inter text-teal-950 text-md font-semibold tracking-tight mb-0.5"
-                            >Contact</span
-                            >
-                        </div>
-                    </a>
-                </div>
-
-                <div class="bg-teal-950 rounded-lg">
-                    <a href="https://github.com/raphael-goetz">
-                        <div
-                                class="flex items-center justify-center gap-1.5 px-2 py-1 border border-teal-950 rounded-lg text-left hover:-translate-x-0.5 hover:-translate-y-0.5 bg-teal-100 duration-200"
+                            Contact
+                        </a>
+                        <a
+                            class="button"
+                            href="https://github.com/raphael-goetz"
+                            aria-label="GitHub profile"
                         >
-                            <!-- @license lucide-static v0.548.0 - ISC -->
                             <svg
-                                    class="lucide lucide-github w-4"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                aria-hidden="true"
+                                class="icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
                             >
-                                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
-                                <path d="M9 18c-4.51 2-5-2-7-2"/>
+                                <path
+                                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+                                />
+                                <path d="M9 18c-4.51 2-5-2-7-2" />
                             </svg>
-
-                            <span class="inter text-teal-950 text-md font-semibold tracking-tight mb-0.5"
-                            >Github</span
-                            >
-                        </div>
-                    </a>
+                            GitHub
+                        </a>
+                    </nav>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div id="projects" class="">
-        <h2
-                class="text-teal-950 text-2xl md:text-3xl font-semibold mb-4 neuton-bold tracking-tighter"
-        >
-            My work
-        </h2>
-        <div class="flex flex-col gap-2 mb-10">
-            <div class="bg-teal-950 rounded-lg">
-                <a href="https://code0.tech">
-                    <div
-                            class="border border-teal-950 rounded-lg text-left hover:-translate-x-1 hover:-translate-y-1 bg-teal-100 duration-200"
+            </header>
+
+            <section class="section" aria-labelledby="work-title">
+                <div class="section__heading">
+                    <p class="eyebrow">Selected work</p>
+                    <h2 id="work-title">Projects</h2>
+                </div>
+
+                <div class="project-list">
+                    <a
+                        class="project-card"
+                        href="projects/codezero.html"
+                        data-prefetch
                     >
-                        <div class="px-6 my-6">
-                            <h1 class="text-teal-950 text-2xl font-semibold tracking-tight neuton-regular -mb-1 -mt-2">
-                                Code0</h1>
-                            <p class="text-teal-950/75 text-base text-gray-500 tracking-tight inter -mb-2">
-                                2023-present</p>
-                            <br/>
-                            <p class="inter text-teal-950 text-base md:text-lg leading-relaxed tracking-tight">
-                                Code0 is a no-code backend and automatisation tool. I
-                                learned to write performance oriented microservices in Rust.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="bg-teal-950 rounded-lg">
-                <a href="https://o7.studio">
-                    <div
-                            class="border border-teal-950 rounded-lg text-left hover:-translate-x-1 hover:-translate-y-1 bg-teal-100 duration-200"
+                        <span class="project-card__body">
+                            <span>
+                                <span class="project-card__title"
+                                    >CodeZero</span
+                                >
+                                <span class="project-card__date"
+                                    >2023 - present</span
+                                >
+                            </span>
+                            <span class="project-card__copy">
+                                CodeZero is an open-source no-code automation
+                                and AI orchestration platform.
+                            </span>
+                            <span class="project-card__cta"
+                                >Read project notes</span
+                            >
+                        </span>
+                    </a>
+
+                    <a
+                        class="project-card"
+                        href="projects/o7-studio.html"
+                        data-prefetch
                     >
-                        <div class="px-6 my-6">
-                            <h1 class="text-teal-950 text-2xl font-semibold tracking-tight neuton-regular -mb-1 -mt-2">
-                                o7Studio</h1>
-                            <p class="text-teal-950/75 text-base text-gray-500 tracking-tight inter -mb-2">
-                                2023-present</p>
-                            <br/>
-                            <p class="inter text-teal-950 text-base md:text-lg leading-relaxed tracking-tight">
-                                o7Studio is a development studio that focuses on
-                                cloud-native gaming and event hosting. I learned to write
-                                Golang and Kotlin.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="bg-teal-950 rounded-lg hover:cursor-pointer">
-                <div
-                        class="border border-teal-950 rounded-lg text-left hover:-translate-x-1 hover:-translate-y-1 bg-teal-100 duration-200"
-                >
-                    <div class="px-6 my-6">
-                        <h1 class="text-teal-950 text-2xl font-semibold tracking-tight neuton-regular -mb-1 -mt-2">
-                            Uroria Network</h1>
-                        <p class="text-teal-950/75 text-base text-gray-500 tracking-tight inter -mb-2">2021-2023
-                            (discontinued)</p>
-                        <br/>
-                        <p class="inter text-teal-950 text-base md:text-lg leading-relaxed tracking-tight">
-                            Uroria was a Minecraft Server that had focused on user
-                            experience and inovative concepts. I got my first steps into
-                            programming with Java
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <h2
-                class="text-teal-950 font-black text-2xl md:text-3xl font-semibold neuton-bold tracking-tighter -mb-2"
-        >
-            About myself
-        </h2>
-        <section class="h-4"></section>
-        <p class="inter text-teal-950 text-justify text-base md:text-lg leading-relaxed tracking-tight">
-            My main goal while developing the named project was not only to learn
-            new programming languages and frameworks but also learn as a person.
-            Managing a whole project and the underlying team taught me many
-            lessons about the social and engineering part of a leading position.
-        </p>
-    </div>
-    <div id="infos">
-        <div class="grid grid-cols-2 gap-4 items-stretch h-full mt-6">
-            <!-- Column 1 -->
-            <div class="flex flex-col">
-                <h3 class="text-teal-950 text-xl neuton-bold tracking-tighter mb-2">Based in Leipzig, Germany</h3>
-                <div
-                        class="border border-teal-950 bg-white rounded-lg overflow-hidden flex-1 flex"
-                >
-                    <div id="map" class="flex-1"></div>
-                </div>
-            </div>
-
-            <!-- Column 2 -->
-            <div class="flex flex-col">
-                <h3 class="text-teal-950 text-xl neuton-bold tracking-tighter mb-2">My Tech Stack</h3>
-                <div class="border border-teal-950 bg-teal-50 rounded-lg px-4 flex-1 flex flex-col overflow-hidden">
-                    <div class="flex columns-3 flex-1 pt-12 gap-4">
-
-                        <!-- Kotlin -->
-                        <a class="group flex flex-col items-center justify-end flex-1 hover:cursor-pointer transition-transform duration-300">
-                            <section class="h-16"></section>
-                            <span class="inter tracking-tight transform transition-transform duration-300 mb-2 group-hover:-translate-y-2">
-                                🥈 Kotlin
+                        <span class="project-card__body">
+                            <span>
+                                <span class="project-card__title"
+                                    >o7studios</span
+                                >
+                                <span class="project-card__date"
+                                    >2023 - present</span
+                                >
                             </span>
-                            <img
-                                    class="w-3/4 transform transition-transform duration-300 -mb-2 group-hover:-translate-y-2 scale-110"
-                                    src="public/pillar_med.png"
-                                    alt="pillar"
-                            />
-                        </a>
-
-                        <!-- Rust -->
-                        <a class="group flex flex-col items-center justify-end flex-1 hover:cursor-pointer transition-transform duration-300">
-                            <section class="h-3"></section>
-                            <span class="inter tracking-tight transform transition-transform duration-300 mb-2 group-hover:-translate-y-2">
-                                🥇 Rust
+                            <span class="project-card__copy">
+                                o7studios builds large-scale Minecraft servers,
+                                events, and reusable developer tooling.
                             </span>
-                            <img
-                                    class="w-3/4 transform transition-transform duration-300 -mb-2 group-hover:-translate-y-2 scale-110"
-                                    src="public/pillar_big.png"
-                                    alt="pillar"
-                            />
-                        </a>
+                            <span class="project-card__cta"
+                                >Read project notes</span
+                            >
+                        </span>
+                    </a>
 
-                        <!-- Golang -->
-                        <a class="group flex flex-col items-center justify-end flex-1 hover:cursor-pointer transition-transform duration-300">
-                            <section class="h-24"></section>
-                            <span class="inter tracking-tight transform transition-transform duration-300 mb-2 group-hover:-translate-y-2">
-                                🥉 Golang
+                    <a
+                        class="project-card"
+                        href="projects/uroria.html"
+                        data-prefetch
+                    >
+                        <span class="project-card__body">
+                            <span>
+                                <span class="project-card__title"
+                                    >Uroria Network</span
+                                >
+                                <span class="project-card__date"
+                                    >2021 - 2023, discontinued</span
+                                >
                             </span>
-                            <img
-                                    class="w-3/4 transform transition-transform duration-300 -mb-2 group-hover:-translate-y-2 scale-110"
-                                    src="public/pillar_small.png"
-                                    alt="pillar"
-                            />
-                        </a>
-                    </div>
+                            <span class="project-card__copy">
+                                Uroria Network was a Minecraft server project
+                                focused on user experience.
+                            </span>
+                            <span class="project-card__cta"
+                                >Read project notes</span
+                            >
+                        </span>
+                    </a>
                 </div>
-            </div>
+            </section>
 
-        </div>
-
-
-        <!-- FOOTER -->
-        <div id="footer"
-             class="flex flex-col md:flex-row md:items-center justify-between !mt-12 gap-2 md:gap-0 text-center md:text-left">
-            <div>
-                <p class="text-teal-950/75 text-xs md:text-sm tracking-tight inter">
-                    © Raphael Götz 2025 - Copyright
+            <section class="section about-note" aria-labelledby="about-title">
+                <h2 id="about-title">About</h2>
+                <p>
+                    I got into programming through Minecraft projects because
+                    they made ideas feel immediate. I could build something, let
+                    people use it, and quickly see what worked. That practical
+                    way of learning still shapes how I approach backend
+                    services, tools, and project work today.
                 </p>
-            </div>
-            <div class="flex flex-row justify-center md:justify-end">
-                <a href="./privacy/imprint.html">
-                    <p class="text-teal-950/75 text-xs md:text-sm tracking-tight inter mr-4">Imprint</p>
-                </a>
-                <a href="./privacy/policy.html">
-                    <p class="text-teal-950/75 text-xs md:text-sm tracking-tight inter">Privacy Policy</p>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-</body>
+            </section>
+
+            <section
+                class="section info-grid"
+                aria-label="Location and tech stack"
+            >
+                <div class="info-panel">
+                    <h2>Based in Leipzig, Germany</h2>
+                    <div
+                        id="map"
+                        class="map-panel"
+                        aria-label="Map centered on Leipzig"
+                    ></div>
+                </div>
+
+                <div class="info-panel">
+                    <h2>Core stack</h2>
+                    <div class="stack-podium" aria-label="Core stack ranking">
+                        <a
+                            class="stack-podium__item stack-podium__item--go"
+                            href="https://go.dev/"
+                        >
+                            <span><strong>🥈</strong> Go</span>
+                            <img
+                                src="public/pillar_med.png"
+                                alt="Second-place pillar"
+                            />
+                        </a>
+                        <a
+                            class="stack-podium__item stack-podium__item--rust"
+                            href="https://www.rust-lang.org/"
+                        >
+                            <span><strong>🥇</strong> Rust</span>
+                            <img
+                                src="public/pillar_big.png"
+                                alt="First-place pillar"
+                            />
+                        </a>
+                        <a
+                            class="stack-podium__item stack-podium__item--kotlin"
+                            href="https://kotlinlang.org/"
+                        >
+                            <span><strong>🥉</strong> Kotlin</span>
+                            <img
+                                src="public/pillar_small.png"
+                                alt="Third-place pillar"
+                            />
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer" aria-label="Legal and copyright">
+            <p>© Raphael Arun Götz 2026 - Copyright</p>
+            <nav aria-label="Legal">
+                <a href="./privacy/imprint.html">Imprint</a>
+                <a href="./privacy/policy.html">Privacy Policy</a>
+            </nav>
+        </footer>
+    </body>
 </html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>o7studios - Raphael Götz</title>
+    <meta
+            name="description"
+            content="Project notes for o7studios, a Minecraft development studio for large-scale servers, live events, and developer tooling."
+    />
+    <link rel="stylesheet" href="../index.css" type="text/css" media="screen"/>
+</head>
+<body>
+<main class="site-shell project-page">
+    <header class="project-hero">
+        <p class="eyebrow">Selected work</p>
+        <h1>o7studios</h1>
+        <p class="lede">
+            o7studios is a Minecraft development studio building large-scale servers, live events, creator experiences,
+            and an ecosystem of tools for professional Minecraft development.
+        </p>
+    </header>
+
+    <nav class="project-nav" aria-label="Project navigation">
+        <a class="project-link" href="../index.html#work-title">
+            <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 19-7-7 7-7"/>
+                <path d="M19 12H5"/>
+            </svg>
+            Back to projects
+        </a>
+        <a class="project-link project-link--primary" href="https://www.o7.studio">
+            Visit site
+            <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 3h6v6"/>
+                <path d="M10 14 21 3"/>
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            </svg>
+        </a>
+    </nav>
+
+    <figure class="project-preview">
+        <img src="../public/projects/o7-studio-preview.png" alt="o7studios landing page preview"/>
+    </figure>
+
+    <section class="project-article">
+        <div class="detail-block">
+            <h2>General project infos</h2>
+            <p>
+                o7studios is a Minecraft development studio focused on large-scale servers, live events, creator
+                experiences, and reusable infrastructure for professional Minecraft projects. The work is not only about
+                individual plugins; the studio also builds the surrounding ecosystem needed to develop, run, and scale
+                servers faster.
+            </p>
+            <p>
+                The ecosystem consists of several technical products. Octopus is a backend and cross-server
+                communication layer for Minecraft networks and related services such as websites or Discord bots.
+                Megalodon is a Paper plugin development framework with game-state, GUI, messaging, border, storage,
+                spectator, addon, and ecosystem-integration tooling. Cheetah is a cloud-native Minecraft reverse proxy
+                for dynamic player routing, Kubernetes-oriented operation, multi-server setups, and crossplay.
+            </p>
+            <p>
+                Together these tools reduce repeated infrastructure work. Server teams can focus more on gameplay,
+                events, and creator-specific features instead of rebuilding backend communication, plugin foundations,
+                and routing logic for every project.
+            </p>
+            <ul class="fact-list">
+                <li>
+                    <strong>Octopus</strong>
+                    <span>Backend and cross-server communication layer for shared game data, real-time events, mTLS-secured clients, backups, Kubernetes deployment, and SDK usage across Java, Go, and TypeScript.</span>
+                </li>
+                <li>
+                    <strong>Megalodon</strong>
+                    <span>Paper plugin development framework with tooling for game states, GUIs, messaging, storage, borders, spectator systems, addons, and ecosystem integration.</span>
+                </li>
+                <li>
+                    <strong>Cheetah</strong>
+                    <span>Go-based Minecraft proxy for dynamic player routing, live transfers, Kubernetes-native scaling, multi-server operation, and Java/Bedrock crossplay.</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="detail-block">
+            <h2>My role</h2>
+            <p>
+                I led the technical engineering work for the o7studios ecosystem. That included the full planning,
+                concept, and engineering direction for Octopus and Cheetah, as well as managing and planning the work
+                around Megalodon.
+            </p>
+            <p>
+                Compared to CodeZero, where I planned selected services, o7 required full technical ownership of the
+                engineering track. I planned the architecture, broke down implementation tasks, coordinated the work of
+                my developer partners, and kept the backend, proxy, and Minecraft tooling pieces aligned as one system.
+            </p>
+        </div>
+
+        <div class="detail-block">
+            <h2>Details</h2>
+            <ul class="fact-list">
+                <li>
+                    <strong>Role</strong>
+                    <span>Technical engineering lead, software engineer</span>
+                </li>
+                <li>
+                    <strong>Stack</strong>
+                    <span>Primarily Go; also TypeScript and Java/Kotlin. Docker, gRPC, NATS, MongoDB.</span>
+                </li>
+                <li>
+                    <strong>Product surface</strong>
+                    <span>Large-scale Minecraft servers, live events, backend services, cross-server communication, Paper plugin tooling, reverse proxy infrastructure, and creator-facing development work.</span>
+                </li>
+                <li>
+                    <strong>Work</strong>
+                    <span>Technical planning and architecture for Octopus and Cheetah, Megalodon planning and task management, engineering-team coordination, Go services, Java/Kotlin Minecraft tooling, service communication, CLI tools, and TUIs.</span>
+                </li>
+                <li>
+                    <strong>Source</strong>
+                    <span><a href="https://www.o7.studio">o7.studio</a></span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer" aria-label="Legal and copyright">
+    <p>© Raphael Arun Götz 2026 - Copyright</p>
+    <nav aria-label="Legal">
+        <a href="../privacy/imprint.html">Imprint</a>
+        <a href="../privacy/policy.html">Privacy Policy</a>
+    </nav>
+</footer>
+</body>
+</html>
