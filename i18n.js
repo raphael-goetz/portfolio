@@ -8,7 +8,7 @@
         "Primary links": "Wichtige Links",
         "Download CV": "Lebenslauf herunterladen",
         "Contact": "Kontakt",
-        "Send email": "E-Mail senden",
+        "Contact by email": "Kontakt per E-Mail",
         "GitHub profile": "GitHub-Profil",
         "Selected work": "Ausgewählte Arbeiten",
         "Projects": "Projekte",
