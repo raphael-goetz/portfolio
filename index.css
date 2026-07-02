@@ -164,6 +164,11 @@ a {
     text-decoration: none;
 }
 
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
 img {
     display: block;
     max-width: 100%;

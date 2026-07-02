@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /cv.typ
+Disallow: /cv-de.typ
+
+Sitemap: https://raphael-goetz.de/sitemap.xml
