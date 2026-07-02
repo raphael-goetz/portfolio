@@ -167,8 +167,42 @@
         document.body.prepend(nav);
     }
 
+    function prepareExternalLinks() {
+        document.querySelectorAll("a[href]").forEach((link) => {
+            const url = new URL(link.href, window.location.href);
+            if ((url.protocol === "http:" || url.protocol === "https:") && url.origin !== window.location.origin) {
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+            }
+        });
+    }
+
+    function setupPagePreviews() {
+        const prepared = new Set();
+        document.querySelectorAll("[data-prefetch]").forEach((link) => {
+            link.addEventListener("pointerenter", () => {
+                const url = new URL(link.href, window.location.href);
+                if (prepared.has(url.href)) return;
+                prepared.add(url.href);
+
+                if (HTMLScriptElement.supports && HTMLScriptElement.supports("speculationrules")) {
+                    const rules = document.createElement("script");
+                    rules.type = "speculationrules";
+                    rules.textContent = JSON.stringify({
+                        prerender: [{ urls: [url.href], eagerness: "immediate" }],
+                    });
+                    document.head.appendChild(rules);
+                } else {
+                    fetch(url.href, { priority: "low" }).catch(() => {});
+                }
+            }, { once: true });
+        });
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
         createSwitch();
+        prepareExternalLinks();
+        setupPagePreviews();
         const saved = localStorage.getItem("portfolio-locale");
         const initial = saved || (navigator.language.toLowerCase().startsWith("de") ? "de" : "en");
         setLocale(initial, false);
