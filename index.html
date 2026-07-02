@@ -3,15 +3,126 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Raphael Götz</title>
+        <title>Raphael Götz — Software Engineer</title>
+        <link rel="icon" href="public/favicon.svg" type="image/svg+xml" />
+        <link rel="manifest" href="site.webmanifest" />
+        <meta name="theme-color" content="#dff2eb" />
         <meta
             name="description"
             content="Portfolio of Raphael Götz, a software engineer focused on backend, services, and product-minded engineering."
         />
-        <link
-            rel="stylesheet"
-            href="https://unpkg.com/leaflet/dist/leaflet.css"
-        />
+        <meta name="author" content="Raphael Götz" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://raphael-goetz.de/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content="Raphael Götz" />
+        <meta property="og:title" content="Raphael Götz — Software Engineer" />
+        <meta property="og:description" content="Backend-focused software engineer building distributed systems, automation platforms, and developer tooling." />
+        <meta property="og:url" content="https://raphael-goetz.de/" />
+        <meta property="og:image" content="https://raphael-goetz.de/public/profile.webp" />
+        <meta property="og:image:type" content="image/webp" />
+        <meta property="og:image:width" content="600" />
+        <meta property="og:image:height" content="613" />
+        <meta property="og:image:alt" content="Portrait of Raphael Götz" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Raphael Götz — Software Engineer" />
+        <meta name="twitter:description" content="Backend-focused software engineer building distributed systems, automation platforms, and developer tooling." />
+        <meta name="twitter:image" content="https://raphael-goetz.de/public/profile.webp" />
+        <meta name="twitter:image:alt" content="Portrait of Raphael Götz" />
+        <link rel="me" href="https://github.com/raphael-goetz" />
+        <link rel="alternate" href="public/cv-raphael-goetz.pdf" type="application/pdf" title="Raphael Götz CV" />
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebSite",
+                        "@id": "https://raphael-goetz.de/#website",
+                        "url": "https://raphael-goetz.de/",
+                        "name": "Raphael Götz",
+                        "description": "Portfolio of software engineer Raphael Götz",
+                        "inLanguage": ["en", "de"],
+                        "publisher": {"@id": "https://raphael-goetz.de/#raphael"}
+                    },
+                    {
+                        "@type": "ProfilePage",
+                        "@id": "https://raphael-goetz.de/#profile",
+                        "url": "https://raphael-goetz.de/",
+                        "name": "Raphael Götz — Software Engineer",
+                        "dateModified": "2026-07-02",
+                        "isPartOf": {"@id": "https://raphael-goetz.de/#website"},
+                        "mainEntity": {"@id": "https://raphael-goetz.de/#raphael"},
+                        "hasPart": {"@id": "https://raphael-goetz.de/#projects"}
+                    },
+                    {
+                        "@type": "Person",
+                        "@id": "https://raphael-goetz.de/#raphael",
+                        "name": "Raphael Götz",
+                        "givenName": "Raphael",
+                        "familyName": "Götz",
+                        "url": "https://raphael-goetz.de/",
+                        "description": "Backend-focused software engineer building distributed systems, automation platforms, and developer tooling.",
+                        "image": {
+                            "@type": "ImageObject",
+                            "url": "https://raphael-goetz.de/public/profile.webp",
+                            "width": 600,
+                            "height": 613,
+                            "caption": "Raphael Götz"
+                        },
+                        "jobTitle": "Software Engineer",
+                        "email": "mailto:contact@raphael-goetz.de",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Leipzig",
+                            "addressCountry": "DE"
+                        },
+                        "sameAs": ["https://github.com/raphael-goetz"],
+                        "knowsAbout": [
+                            "Distributed systems",
+                            "Backend engineering",
+                            "Rust",
+                            "Go",
+                            "TypeScript",
+                            "Microservices",
+                            "Event-driven architecture"
+                        ],
+                        "alumniOf": {
+                            "@type": "CollegeOrUniversity",
+                            "name": "Duale Hochschule Sachsen",
+                            "url": "https://www.dhsn.de/"
+                        }
+                    },
+                    {
+                        "@type": "ItemList",
+                        "@id": "https://raphael-goetz.de/#projects",
+                        "name": "Selected software engineering projects",
+                        "numberOfItems": 3,
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "url": "https://raphael-goetz.de/projects/codezero.html",
+                                "name": "CodeZero"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "url": "https://raphael-goetz.de/projects/o7-studio.html",
+                                "name": "o7studios"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "url": "https://raphael-goetz.de/projects/uroria.html",
+                                "name": "Uroria Network"
+                            }
+                        ]
+                    }
+                ]
+            }
+        </script>
+        <link rel="preload" href="public/fonts/neuton/neuton-v24-latin-700.woff2" as="font" type="font/woff2" crossorigin />
         <link
             rel="stylesheet"
             href="index.css"
@@ -19,12 +130,16 @@
             media="screen"
         />
         <script src="i18n.js" defer></script>
-        <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
         <script defer>
             window.addEventListener("DOMContentLoaded", function () {
                 const mapElement = document.getElementById("map");
 
-                if (window.L && mapElement) {
+                function initializeMap() {
+                    if (!window.L || !mapElement || mapElement.dataset.initialized) {
+                        return;
+                    }
+
+                    mapElement.dataset.initialized = "true";
                     const map = L.map("map", {
                         scrollWheelZoom: false,
                         zoomControl: false,
@@ -49,34 +164,37 @@
                         );
                 }
 
-                const prefetched = new Set();
-                document
-                    .querySelectorAll("[data-prefetch]")
-                    .forEach(function (link) {
-                        link.addEventListener(
-                            "pointerenter",
-                            function () {
-                                const href = link.getAttribute("href");
+                function loadMap() {
+                    const stylesheet = document.createElement("link");
+                    stylesheet.rel = "stylesheet";
+                    stylesheet.href = "https://unpkg.com/leaflet/dist/leaflet.css";
+                    document.head.appendChild(stylesheet);
 
-                                if (!href || prefetched.has(href)) {
-                                    return;
-                                }
+                    const script = document.createElement("script");
+                    script.src = "https://unpkg.com/leaflet/dist/leaflet.js";
+                    script.onload = initializeMap;
+                    document.head.appendChild(script);
+                }
 
-                                const prefetch = document.createElement("link");
-                                prefetch.rel = "prefetch";
-                                prefetch.as = "document";
-                                prefetch.href = href;
-                                document.head.appendChild(prefetch);
-                                prefetched.add(href);
-                            },
-                            { once: true },
-                        );
-                    });
+                if (mapElement && "IntersectionObserver" in window) {
+                    const observer = new IntersectionObserver(
+                        function (entries) {
+                            if (entries.some(function (entry) { return entry.isIntersecting; })) {
+                                observer.disconnect();
+                                loadMap();
+                            }
+                        },
+                        { rootMargin: "320px" },
+                    );
+                    observer.observe(mapElement);
+                } else if (mapElement) {
+                    loadMap();
+                }
             });
         </script>
     </head>
     <body>
-        <main class="site-shell">
+        <main id="main-content" class="site-shell">
             <header class="hero">
                 <img
                     class="hero__image"
@@ -89,7 +207,7 @@
                 <div class="hero__content">
                     <h1>Raphael Götz</h1>
                     <p class="lede">
-                        Dual computer science student at DHSN and software
+                        Dual computer science student at Duale Hochschule Sachsen and software
                         engineer focused on backend systems, services, and
                         practical software development.
                     </p>
@@ -198,7 +316,7 @@
                                 and AI orchestration platform.
                             </span>
                             <span class="project-card__cta"
-                                >View project <span aria-hidden="true">-&gt;</span></span
+                                >View project <span aria-hidden="true">→</span></span
                             >
                         </span>
                     </a>
@@ -222,7 +340,7 @@
                                 events, and reusable developer tooling.
                             </span>
                             <span class="project-card__cta"
-                                >View project <span aria-hidden="true">-&gt;</span></span
+                                >View project <span aria-hidden="true">→</span></span
                             >
                         </span>
                     </a>
@@ -246,7 +364,7 @@
                                 focused on user experience.
                             </span>
                             <span class="project-card__cta"
-                                >View project <span aria-hidden="true">-&gt;</span></span
+                                >View project <span aria-hidden="true">→</span></span
                             >
                         </span>
                     </a>

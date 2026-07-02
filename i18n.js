@@ -4,7 +4,7 @@
     const translations = {
         "Portfolio of Raphael Götz, a software engineer focused on backend, services, and product-minded engineering.": "Portfolio von Raphael Götz, einem Softwareentwickler mit Fokus auf Backend-Systeme, Services und produktorientierte Entwicklung.",
         "Portrait of Raphael Götz": "Porträt von Raphael Götz",
-        "Dual computer science student at DHSN and software engineer focused on backend systems, services, and practical software development.": "Dualer Informatikstudent an der DHSN und Softwareentwickler mit Fokus auf Backend-Systeme, Services und praxisnahe Softwareentwicklung.",
+        "Dual computer science student at Duale Hochschule Sachsen and software engineer focused on backend systems, services, and practical software development.": "Dualer Informatikstudent an der Dualen Hochschule Sachsen und Softwareentwickler mit Fokus auf Backend-Systeme, Services und praxisnahe Softwareentwicklung.",
         "Primary links": "Wichtige Links",
         "Download CV": "Lebenslauf herunterladen",
         "Contact": "Kontakt",
@@ -164,11 +164,50 @@
             const button = event.target.closest("[data-locale]");
             if (button) setLocale(button.dataset.locale, true);
         });
-        document.body.prepend(nav);
+        const skipLink = document.querySelector(".skip-link");
+        if (skipLink) {
+            skipLink.after(nav);
+        } else {
+            document.body.prepend(nav);
+        }
+    }
+
+    function prepareExternalLinks() {
+        document.querySelectorAll("a[href]").forEach((link) => {
+            const url = new URL(link.href, window.location.href);
+            if ((url.protocol === "http:" || url.protocol === "https:") && url.origin !== window.location.origin) {
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+            }
+        });
+    }
+
+    function setupPagePreviews() {
+        const prepared = new Set();
+        document.querySelectorAll("[data-prefetch]").forEach((link) => {
+            link.addEventListener("pointerenter", () => {
+                const url = new URL(link.href, window.location.href);
+                if (prepared.has(url.href)) return;
+                prepared.add(url.href);
+
+                if (HTMLScriptElement.supports && HTMLScriptElement.supports("speculationrules")) {
+                    const rules = document.createElement("script");
+                    rules.type = "speculationrules";
+                    rules.textContent = JSON.stringify({
+                        prerender: [{ urls: [url.href], eagerness: "immediate" }],
+                    });
+                    document.head.appendChild(rules);
+                } else {
+                    fetch(url.href, { priority: "low" }).catch(() => {});
+                }
+            }, { once: true });
+        });
     }
 
     document.addEventListener("DOMContentLoaded", () => {
         createSwitch();
+        prepareExternalLinks();
+        setupPagePreviews();
         const saved = localStorage.getItem("portfolio-locale");
         const initial = saved || (navigator.language.toLowerCase().startsWith("de") ? "de" : "en");
         setLocale(initial, false);

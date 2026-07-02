@@ -1,0 +1,17 @@
+{
+  "name": "Raphael Götz — Software Engineer",
+  "short_name": "Raphael Götz",
+  "description": "Portfolio of software engineer Raphael Götz",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f2fbf7",
+  "theme_color": "#dff2eb",
+  "icons": [
+    {
+      "src": "/public/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

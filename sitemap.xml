@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://raphael-goetz.de/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://raphael-goetz.de/public/profile.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://raphael-goetz.de/projects/codezero.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://raphael-goetz.de/public/projects/codezero-preview.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://raphael-goetz.de/projects/o7-studio.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://raphael-goetz.de/public/projects/o7-studio-preview.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://raphael-goetz.de/projects/uroria.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>
