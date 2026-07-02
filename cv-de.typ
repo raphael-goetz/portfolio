@@ -1,5 +1,5 @@
 #set document(
-  title: "Raphael Arun Götz - CV",
+  title: "Raphael Arun Götz - Lebenslauf",
   author: "Raphael Arun Götz",
 )
 
@@ -9,7 +9,7 @@
   fill: white,
 )
 
-#set text(size: 11pt, lang: "en")
+#set text(size: 11pt, lang: "de")
 #set par(leading: 0.5em, spacing: 0.48em, justify: false)
 
 #let accent = rgb("#0d7a65")
@@ -51,7 +51,7 @@
 #align(center)[
   #text(size: 25.5pt, weight: 700, fill: ink, "Raphael Arun Götz")
   #v(0.22em)
-  #text(fill: muted, "Software Engineer · Leipzig, Germany")
+  #text(fill: muted, "Softwareentwickler · Leipzig, Deutschland")
   #v(0.32em)
   #link("mailto:contact@raphael-goetz.de")[contact\@raphael-goetz.de]
   #text(fill: muted, " · ")
@@ -62,19 +62,19 @@
 
 #v(0.9em)
 
-Backend-focused software engineer building distributed systems, automation platforms, and developer tooling with Rust, Go, and TypeScript.
+Backend-fokussierter Softwareentwickler für verteilte Systeme, Automatisierungsplattformen und Entwicklerwerkzeuge mit Rust, Go und TypeScript.
 
-#section("Experience")
+#section("Berufserfahrung")
 
 #role(
-  "Founder & Software Architect",
+  "Gründer & Softwarearchitekt",
   [Code0 UG · #link("https://codezero.build")[#text(fill: accent, underline([Website]))]],
-  "2023 - present",
+  "2023 – heute",
   [
     #set list(marker: [–], indent: 0.85em, body-indent: 0.35em)
-    - Founded and built a no-code platform for visual workflow automation, backend APIs, and AI orchestration.
-    - Designed its runtime, microservices implemented primarily in Rust, API architecture, service boundaries, and event-driven communication.
-    - Connected product direction with technical planning, implementation tasks, and GitHub-based team workflows.
+    - Gründung und Entwicklung einer No-Code-Plattform für visuelle Workflow-Automatisierung, Backend-APIs und KI-Orchestrierung.
+    - Konzeption von Runtime, Rust-basierten Microservices, API-Architektur, Servicegrenzen und ereignisgesteuerter Kommunikation.
+    - Verbindung von Produktentwicklung, technischer Planung, Implementierungsaufgaben und GitHub-basierten Teamprozessen.
   ],
   stack: [Rust, TypeScript, Docker, gRPC, GraphQL, Tonic, NATS, Postgres],
 )
@@ -82,16 +82,16 @@ Backend-focused software engineer building distributed systems, automation platf
 #v(0.55em)
 
 #role(
-  "Technical Lead & Software Architect",
+  "Technischer Leiter & Softwarearchitekt",
   [o7 Studio OOD · #link("https://www.o7.studio")[#text(fill: accent, underline([Website]))]],
-  "2023 - present",
+  "2023 – heute",
   [
-    #text(fill: muted)[Minecraft development studio building large-scale servers, live events, and reusable infrastructure.]
+    #text(fill: muted)[Minecraft-Entwicklungsstudio für große Server, Live-Events und wiederverwendbare Infrastruktur.]
     #v(0.18em)
     #set list(marker: [–], indent: 0.85em, body-indent: 0.35em)
-    - Independently designed and implemented *Octopus*, a backend and CMS layer for real-time game infrastructure, integrations, and cross-server communication.
-    - Independently designed and implemented *Cheetah*, a Go-based proxy for dynamic player routing and scalable multi-server operation.
-    - Owned the technical direction across the wider ecosystem, scoped and delegated work on additional systems, and supported their implementation.
+    - Eigenständige Konzeption und Implementierung von *Octopus*, einer Backend- und CMS-Schicht für Echtzeit-Spielinfrastruktur, Integrationen und serverübergreifende Kommunikation.
+    - Eigenständige Konzeption und Implementierung von *Cheetah*, einem Go-basierten Proxy für dynamisches Spieler-Routing und skalierbaren Multi-Server-Betrieb.
+    - Verantwortung für die technische Ausrichtung des gesamten Ökosystems, Planung und Delegation weiterer Systeme sowie Unterstützung bei deren Umsetzung.
   ],
   stack: [Go, TypeScript, Java, Kotlin, Docker, gRPC, NATS, MongoDB],
 )
@@ -99,14 +99,14 @@ Backend-focused software engineer building distributed systems, automation platf
 #v(0.55em)
 
 #role(
-  "Dual Student / Software Developer",
+  "Dualer Student / Softwareentwickler",
   [it factum GmbH · #link("https://www.it-factum.de")[#text(fill: accent, underline([Website]))]],
-  "2023 - 2026",
+  "2023 – 2026",
   [
     #set list(marker: [–], indent: 0.85em, body-indent: 0.35em)
-    - Developed web applications for external clients across C\#/.NET backends and React/TypeScript frontends.
-    - Worked on CI/CD pipelines with Azure DevOps.
-    - Worked across the delivery cycle from requirements and implementation to review and maintenance.
+    - Entwicklung von Webanwendungen für externe Kunden mit C\#/.NET-Backends und React-/TypeScript-Frontends.
+    - Arbeit an CI/CD-Pipelines mit Azure DevOps.
+    - Mitarbeit entlang des Entwicklungsprozesses von Anforderungsaufnahme und Umsetzung bis Review und Wartung.
   ],
   stack: [C\#, .NET, React, TypeScript, Azure DevOps],
 )
@@ -117,14 +117,14 @@ Backend-focused software engineer building distributed systems, automation platf
   columns: (1fr, 1fr),
   gutter: 12pt,
   [
-    #text(weight: 700, "Systems engineering")
+    #text(weight: 700, "Systementwicklung")
     #v(0.22em)
-    Distributed systems, microservices, API design, runtime infrastructure, event-driven architecture, backend services
+    Verteilte Systeme, Microservices, API-Design, Runtime-Infrastruktur, ereignisgesteuerte Architekturen, Backend-Services
   ],
   [
-    #text(weight: 700, "Collaboration")
+    #text(weight: 700, "Zusammenarbeit")
     #v(0.22em)
-    Architecture decisions, technical planning, task decomposition, engineering coordination, product–engineering alignment
+    Architekturentscheidungen, technische Planung, Aufgabenzerlegung, Entwicklungskoordination, Abstimmung von Produkt und Technik
   ],
 )
 
@@ -134,30 +134,30 @@ Backend-focused software engineer building distributed systems, automation platf
   columns: (1fr, 1fr),
   gutter: 12pt,
   [
-    #text(weight: 700, "Languages & frameworks")
+    #text(weight: 700, "Sprachen & Frameworks")
     #v(0.22em)
     Rust, Go, TypeScript, Java, Kotlin, C\#/.NET, React
   ],
   [
-    #text(weight: 700, "Infrastructure & data")
+    #text(weight: 700, "Infrastruktur & Daten")
     #v(0.22em)
     Docker, gRPC, GraphQL, NATS, PostgreSQL, MongoDB, GitHub, GitLab
   ],
 )
 
 #v(0.45em)
-#text(weight: 700, "Working languages") German (native), English (C1)
+#text(weight: 700, "Arbeitssprachen") Deutsch (Muttersprache), Englisch (C1)
 
-#section("Education")
+#section("Ausbildung")
 
 #role(
-  "Bachelor's Degree, Computer Science",
+  "Bachelorstudium Informatik",
   "Duale Hochschule Sachsen, Leipzig",
-  "2023 - 2026",
+  "2023 – 2026",
   [
-    Dual bachelor's degree program alongside professional software development.
+    Duales Bachelorstudium parallel zur professionellen Softwareentwicklung.
     #v(0.2em)
-    #text(weight: 700, "Bachelor's thesis:") Development of a decision model for selecting web rendering techniques.
+    #text(weight: 700, "Bachelorarbeit:") Entwicklung eines Entscheidungsmodells zur Wahl von Web-Rendering-Techniken.
   ],
 )
 
@@ -167,13 +167,13 @@ Backend-focused software engineer building distributed systems, automation platf
   columns: (1fr, 150pt),
   gutter: 18pt,
   [
-    Leipzig, June 16, 2026 \
+    Leipzig, 16. Juni 2026 \
     Raphael Arun Götz
   ],
   [
     #line(length: 100%, stroke: 0.6pt + rule-color)
     #v(0.18em)
-    #text(fill: muted, size: 8.4pt, "Signature")
+    #text(fill: muted, size: 8.4pt, "Unterschrift")
   ],
 )
 ]

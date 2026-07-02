@@ -18,6 +18,7 @@
             type="text/css"
             media="screen"
         />
+        <script src="i18n.js" defer></script>
         <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
         <script defer>
             window.addEventListener("DOMContentLoaded", function () {
@@ -41,7 +42,11 @@
 
                     L.marker([51.3397, 12.3731])
                         .addTo(map)
-                        .bindPopup("<b>Leipzig, Germany</b><br>Based here.");
+                        .bindPopup(
+                            window.portfolioLocale === "de"
+                                ? "<b>Leipzig, Deutschland</b><br>Hier zuhause."
+                                : "<b>Leipzig, Germany</b><br>Based here.",
+                        );
                 }
 
                 const prefetched = new Set();
@@ -75,11 +80,14 @@
             <header class="hero">
                 <img
                     class="hero__image"
-                    src="public/profile.png"
+                    src="public/profile.webp"
                     alt="Portrait of Raphael Götz"
+                    width="600"
+                    height="613"
+                    fetchpriority="high"
                 />
                 <div class="hero__content">
-                    <h1>Raphael Arun Götz</h1>
+                    <h1>Raphael Götz</h1>
                     <p class="lede">
                         Dual computer science student at DHSN and software
                         engineer focused on backend systems, services, and
@@ -190,7 +198,7 @@
                                 and AI orchestration platform.
                             </span>
                             <span class="project-card__cta"
-                                >Read project notes</span
+                                >View project <span aria-hidden="true">-&gt;</span></span
                             >
                         </span>
                     </a>
@@ -214,7 +222,7 @@
                                 events, and reusable developer tooling.
                             </span>
                             <span class="project-card__cta"
-                                >Read project notes</span
+                                >View project <span aria-hidden="true">-&gt;</span></span
                             >
                         </span>
                     </a>
@@ -238,7 +246,7 @@
                                 focused on user experience.
                             </span>
                             <span class="project-card__cta"
-                                >Read project notes</span
+                                >View project <span aria-hidden="true">-&gt;</span></span
                             >
                         </span>
                     </a>
@@ -278,8 +286,10 @@
                         >
                             <span><strong>🥈</strong> Go</span>
                             <img
-                                src="public/pillar_med.png"
+                                src="public/pillar_med.webp"
                                 alt="Second-place pillar"
+                                loading="lazy"
+                                decoding="async"
                             />
                         </a>
                         <a
@@ -288,8 +298,10 @@
                         >
                             <span><strong>🥇</strong> Rust</span>
                             <img
-                                src="public/pillar_big.png"
+                                src="public/pillar_big.webp"
                                 alt="First-place pillar"
+                                loading="lazy"
+                                decoding="async"
                             />
                         </a>
                         <a
@@ -298,8 +310,10 @@
                         >
                             <span><strong>🥉</strong> Kotlin</span>
                             <img
-                                src="public/pillar_small.png"
+                                src="public/pillar_small.webp"
                                 alt="Third-place pillar"
+                                loading="lazy"
+                                decoding="async"
                             />
                         </a>
                     </div>
