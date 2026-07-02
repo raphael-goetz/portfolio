@@ -377,7 +377,7 @@ li {
 
 .project-card__date {
     margin-top: 4px;
-    color: var(--muted);
+    color: #425d56;
     font-size: 0.9rem;
 }
 
