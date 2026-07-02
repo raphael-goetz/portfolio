@@ -4,7 +4,7 @@
     const translations = {
         "Portfolio of Raphael Götz, a software engineer focused on backend, services, and product-minded engineering.": "Portfolio von Raphael Götz, einem Softwareentwickler mit Fokus auf Backend-Systeme, Services und produktorientierte Entwicklung.",
         "Portrait of Raphael Götz": "Porträt von Raphael Götz",
-        "Dual computer science student at Duale Hochschule Sachsen and software engineer focused on backend systems, services, and practical software development.": "Dualer Informatikstudent an der Dualen Hochschule Sachsen und Softwareentwickler mit Fokus auf Backend-Systeme, Services und praxisnahe Softwareentwicklung.",
+        "Dual computer science student at DHSN and software engineer focused on backend systems, services, and practical software development.": "Dualer Informatikstudent an der DHSN und Softwareentwickler mit Fokus auf Backend-Systeme, Services und praxisnahe Softwareentwicklung.",
         "Primary links": "Wichtige Links",
         "Download CV": "Lebenslauf herunterladen",
         "Contact": "Kontakt",
