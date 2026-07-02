@@ -9,40 +9,41 @@
             content="Project notes for o7studios, a Minecraft development studio for large-scale servers, live events, and developer tooling."
     />
     <link rel="stylesheet" href="../index.css" type="text/css" media="screen"/>
+    <script src="../i18n.js" defer></script>
 </head>
 <body>
 <main class="site-shell project-page">
     <header class="project-hero">
+        <a class="project-link project-link--back" href="../index.html">
+            <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 19-7-7 7-7"/>
+                <path d="M19 12H5"/>
+            </svg>
+            Back to home
+        </a>
         <p class="eyebrow">Selected work</p>
-        <h1>o7studios</h1>
+        <div class="project-title-row">
+            <h1>o7studios</h1>
+            <a class="project-link project-link--primary" href="https://www.o7.studio">
+                Visit website
+                <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6"/>
+                    <path d="M10 14 21 3"/>
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                </svg>
+            </a>
+        </div>
         <p class="lede">
             o7studios is a Minecraft development studio building large-scale servers, live events, creator experiences,
             and an ecosystem of tools for professional Minecraft development.
         </p>
     </header>
 
-    <nav class="project-nav" aria-label="Project navigation">
-        <a class="project-link" href="../index.html#work-title">
-            <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m12 19-7-7 7-7"/>
-                <path d="M19 12H5"/>
-            </svg>
-            Back to projects
-        </a>
-        <a class="project-link project-link--primary" href="https://www.o7.studio">
-            Visit site
-            <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M15 3h6v6"/>
-                <path d="M10 14 21 3"/>
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-            </svg>
-        </a>
-    </nav>
-
     <figure class="project-preview">
-        <img src="../public/projects/o7-studio-preview.png" alt="o7studios landing page preview"/>
+        <img src="../public/projects/o7-studio-preview.webp" alt="o7studios landing page preview"
+             width="1600" height="1000" decoding="async"/>
     </figure>
 
     <section class="project-article">
