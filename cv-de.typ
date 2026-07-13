@@ -67,12 +67,12 @@ Backend-fokussierter Softwareentwickler für verteilte Systeme, Automatisierungs
 #section("Berufserfahrung")
 
 #role(
-  "Gründer & Softwarearchitekt",
-  [Code0 UG · #link("https://codezero.build")[#text(fill: accent, underline([Website]))]],
+  "Softwarearchitekt & technischer Leiter",
+  [CodeZero · #link("https://codezero.build")[#text(fill: accent, underline([Website]))]],
   "2023 – heute",
   [
     #set list(marker: [–], indent: 0.85em, body-indent: 0.35em)
-    - Gründung und Entwicklung einer No-Code-Plattform für visuelle Workflow-Automatisierung, Backend-APIs und KI-Orchestrierung.
+    - Entwicklung einer No-Code-Plattform für visuelle Workflow-Automatisierung, Backend-APIs und KI-Orchestrierung.
     - Konzeption von Runtime, Rust-basierten Microservices, API-Architektur, Servicegrenzen und ereignisgesteuerter Kommunikation.
     - Verbindung von Produktentwicklung, technischer Planung, Implementierungsaufgaben und GitHub-basierten Teamprozessen.
   ],
@@ -83,7 +83,7 @@ Backend-fokussierter Softwareentwickler für verteilte Systeme, Automatisierungs
 
 #role(
   "Technischer Leiter & Softwarearchitekt",
-  [o7 Studio OOD · #link("https://www.o7.studio")[#text(fill: accent, underline([Website]))]],
+  [o7studios · #link("https://www.o7.studio")[#text(fill: accent, underline([Website]))]],
   "2023 – heute",
   [
     #text(fill: muted)[Minecraft-Entwicklungsstudio für große Server, Live-Events und wiederverwendbare Infrastruktur.]
