@@ -67,12 +67,12 @@ Backend-focused software engineer building distributed systems, automation platf
 #section("Experience")
 
 #role(
-  "Founder & Software Architect",
-  [Code0 UG · #link("https://codezero.build")[#text(fill: accent, underline([Website]))]],
+  "Software Architect & Technical Lead",
+  [CodeZero · #link("https://codezero.build")[#text(fill: accent, underline([Website]))]],
   "2023 - present",
   [
     #set list(marker: [–], indent: 0.85em, body-indent: 0.35em)
-    - Founded and built a no-code platform for visual workflow automation, backend APIs, and AI orchestration.
+    - Built a no-code platform for visual workflow automation, backend APIs, and AI orchestration.
     - Designed its runtime, microservices implemented primarily in Rust, API architecture, service boundaries, and event-driven communication.
     - Connected product direction with technical planning, implementation tasks, and GitHub-based team workflows.
   ],
@@ -83,7 +83,7 @@ Backend-focused software engineer building distributed systems, automation platf
 
 #role(
   "Technical Lead & Software Architect",
-  [o7 Studio OOD · #link("https://www.o7.studio")[#text(fill: accent, underline([Website]))]],
+  [o7studios · #link("https://www.o7.studio")[#text(fill: accent, underline([Website]))]],
   "2023 - present",
   [
     #text(fill: muted)[Minecraft development studio building large-scale servers, live events, and reusable infrastructure.]
